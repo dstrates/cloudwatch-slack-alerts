@@ -1,0 +1,44 @@
+name: CI Go
+on:
+  pull_request:
+    paths:
+      - .github/workflows/ci-go.yml
+      - '**.go'
+      - '**/go.*'
+      - '**/Makefile'
+run-name: CI Go by @${{ github.actor }} ${{ github.sha }}
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    container: golang:1.21.3
+    steps:
+      - name: setup
+        run: git config --global --add safe.directory $(pwd)
+      - uses: actions/checkout@v4
+      - name: build
+        run: make build
+      - name: tidy
+        run: make tidy
+      - name: test
+        run: make unit
+  resolve-go-modules:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout Sources
+        uses: actions/checkout@v4
+      - id: set-matrix
+        run: ./.github/scripts/resolve-modules.sh
+  lint:
+    needs: resolve-go-modules
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.resolve-go-modules.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.52.2
+          working-directory: ${{ matrix.workdir }}
