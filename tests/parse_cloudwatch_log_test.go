@@ -22,7 +22,6 @@ type LogEventMessage struct {
 	Version         string  `json:"version"`
 	Platform        string  `json:"platform"`
 	Repo            string  `json:"repo"`
-	Scanner         string  `json:"scanner"`
 	CloneURL        string  `json:"cloneUrl"`
 	Branch          string  `json:"branch"`
 	IsDefaultBranch bool    `json:"isDefaultBranch"`
@@ -52,8 +51,8 @@ func TestParsingCloudwatchLog(t *testing.T) {
 	require.NoError(t, err)
 
 	logData := events.CloudwatchLogsData{
-		Owner:               "521464361009",
-		LogGroup:            "/aws/lambda/test-rebel-base-secrets",
+		Owner:               "012345678901", // AWS Account ID
+		LogGroup:            "/aws/lambda/test-function",
 		LogStream:           "2023/09/29/[$LATEST]718af798bded4b048af83eb06e98d572",
 		SubscriptionFilters: []string{"error-alerts"},
 		LogEvents: []events.CloudwatchLogsLogEvent{
@@ -79,7 +78,7 @@ func TestParsingCloudwatchLog(t *testing.T) {
 	}
 
 	cfg := &config.Config{
-		AWSRegion: "ap-southeast-2",
+		AWSRegion: "us-east-2",
 	}
 
 	logDetails, logMessage, err := cloudwatch.ProcessCloudWatchLog(ctx, logEvent, cfg)
