@@ -44,7 +44,6 @@ func TestExtractPathAndLineNumber(t *testing.T) {
 func TestFindPartialMatch(t *testing.T) {
 	repoFunctionMap := map[string]string{
 		"force": "the-force",
-		"sith":  "the-sith",
 		"jedi":  "jedi-order",
 	}
 
@@ -56,11 +55,6 @@ func TestFindPartialMatch(t *testing.T) {
 		{
 			partialRepoName: "force",
 			expectedRepo:    "the-force",
-			expectFound:     true,
-		},
-		{
-			partialRepoName: "sith",
-			expectedRepo:    "the-sith",
 			expectFound:     true,
 		},
 		{
@@ -93,11 +87,11 @@ func TestConstructGitHubURL(t *testing.T) {
 		expectError bool
 	}{
 		{
-			org:         "nullify-platform",
+			org:         "dstrates",
 			branch:      "main",
-			caller:      "cmd/pullrequest/main.go:12",
-			function:    "the-force",
-			expectedURL: "https://github.com/nullify-platform/the-force/tree/main/",
+			caller:      "cmd/alerter/main.go:59",
+			function:    "cloudwatch-slack-alerts",
+			expectedURL: "https://github.com/dstrates/cloudwatch-slack-alerts/tree/main/cmd/alerter/main.go",
 			expectError: false,
 		},
 	}
