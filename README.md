@@ -22,6 +22,13 @@ The Lambda is triggered by a CloudWatch Log Susbcription Filter whenever a new l
 
 ![Example Slack alert](img/example_alert.png)
 
+#### Future Improvements
+
+- Track findings and fixes in a database
+  - Add priority score based on service and impact
+- Option to raise a GitHub PR, issue or Jira ticket for each finding
+  - AI generated description and auto-fix
+
 ## Configuration
 
 1. Add the following environment variables to your Lambda function:
