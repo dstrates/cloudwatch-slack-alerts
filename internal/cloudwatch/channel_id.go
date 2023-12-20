@@ -59,15 +59,15 @@ func findChannelIDInMap(channelMapValue string, functionName string) (string, er
 	}
 
 	// find the channel ID with the longest prefix match on the function name
-	channeID := ""
+	channelID := ""
 	longestPrefix := ""
 
 	for prefix, channel := range channelMap {
 		if strings.HasPrefix(functionName, prefix) && len(prefix) > len(longestPrefix) {
-			channeID = channel
+			channelID = channel
 			longestPrefix = prefix
 		}
 	}
 
-	return channeID, nil
+	return channelID, nil
 }
