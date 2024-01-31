@@ -14,8 +14,9 @@
     "labels": ["patch"],
     "packageRules": [
       {
-        "groupName": "Golang Dependencies",
+        "groupName": "Dependencies",
         "groupSlug": "dependencies",
+        "labels": ["patch"],
         "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin", "pinDigest", "lockFileMaintenance"],
         "matchPackagePatterns": ["*"]
       }
