@@ -1,0 +1,23 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:base"],
+    "timezone": "Australia/Sydney",
+    "schedule": ["before 9am on monday"],
+    "docker": {
+      "pinDigests": true
+    },
+    "platformAutomerge": true,
+    "automergeStrategy": "squash",
+    "automergeType": "pr",
+    "automerge": true,
+    "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
+    "labels": ["patch"],
+    "packageRules": [
+      {
+        "groupName": "Golang Dependencies",
+        "groupSlug": "dependencies",
+        "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin", "pinDigest", "lockFileMaintenance"],
+        "matchPackagePatterns": ["*"]
+      }
+    ]
+  }
