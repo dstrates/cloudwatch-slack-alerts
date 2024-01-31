@@ -14,11 +14,11 @@ GOENV := CGO_ENABLED=0
 GOFLAGS := -ldflags "-X 'github.com/nullify-platform/logger/pkg/logger.Version=$(VERSION)'"
 
 build:
-	$(GOENV) go build $(GOFLAGS) -o bin/main ./cmd/...
+	$(GOENV) go build $(GOFLAGS) -o bin/main ./src/...
 
 package:
-	$(GOENV) GOOS=linux GOARCH=amd64 go build -o bin/main ./cmd/...
-	zip -j bin/alerter.zip bin/main
+	$(GOENV) GOOS=linux GOARCH=amd64 go build -o bin/main ./src/...
+	zip -j bin/cloudwatch-slack-alerts.zip bin/main
 
 clean:
 	rm -rf ./bin ./vendor Gopkg.lock coverage.*
