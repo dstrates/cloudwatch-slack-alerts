@@ -10,9 +10,9 @@
   </a>
 </p>
 
-This is a serverless solution that monitors for Lambda errors in AWS CloudWatch and sends alerts to a Slack channel.
+Serverless solution that monitors for Lambda errors in AWS CloudWatch and sends alerts to Slack.
 
-The Lambda is triggered by a CloudWatch Log Susbcription Filter whenever a new log event is published. It analyzes log events to detect errors and relays this information to a designated Slack channel for notification.
+The Lambda is triggered by a CloudWatch Log Susbcription Filter whenever a new log event is published. It analyzes log events to detect errors and relays this information to designated Slack channel(s) for notification.
 
 ## How it works
 
