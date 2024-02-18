@@ -1,9 +1,8 @@
-package tests
+package github
 
 import (
 	"testing"
 
-	"github.com/dstrates/cloudwatch-slack-alerts/internal/github"
 	"github.com/stretchr/testify/assert"
 )
 

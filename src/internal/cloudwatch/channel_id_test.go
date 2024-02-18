@@ -1,12 +1,11 @@
-package tests
+package cloudwatch
 
 import (
 	"context"
 	"fmt"
 	"testing"
 
-	"github.com/dstrates/cloudwatch-slack-alerts/internal/cloudwatch"
-	"github.com/dstrates/cloudwatch-slack-alerts/internal/config"
+	"github.com/dstrates/cloudwatch-slack-alerts/src/internal/config"
 	"github.com/stretchr/testify/assert"
 )
 

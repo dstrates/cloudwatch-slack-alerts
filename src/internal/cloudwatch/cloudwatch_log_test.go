@@ -1,4 +1,4 @@
-package tests
+package cloudwatch
 
 import (
 	"bytes"
@@ -9,8 +9,7 @@ import (
 	"testing"
 
 	"github.com/aws/aws-lambda-go/events"
-	"github.com/dstrates/cloudwatch-slack-alerts/internal/cloudwatch"
-	"github.com/dstrates/cloudwatch-slack-alerts/internal/config"
+	"github.com/dstrates/cloudwatch-slack-alerts/src/internal/config"
 	"github.com/stretchr/testify/require"
 )
 

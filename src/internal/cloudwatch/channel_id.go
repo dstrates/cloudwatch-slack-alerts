@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/dstrates/cloudwatch-slack-alerts/internal/config"
+	"github.com/dstrates/cloudwatch-slack-alerts/src/internal/config"
 	"github.com/nullify-platform/logger/pkg/logger"
 )
 

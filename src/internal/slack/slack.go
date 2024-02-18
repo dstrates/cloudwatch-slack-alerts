@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/dstrates/cloudwatch-slack-alerts/internal/cloudwatch"
-	"github.com/dstrates/cloudwatch-slack-alerts/internal/config"
+	"github.com/dstrates/cloudwatch-slack-alerts/src/internal/cloudwatch"
+	"github.com/dstrates/cloudwatch-slack-alerts/src/internal/config"
 	"github.com/nullify-platform/logger/pkg/logger"
 	"github.com/slack-go/slack"
 )
