@@ -1,6 +1,6 @@
 module "iam_role_alerter_lambda" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = "5.34.0"
+  version = "5.47.1"
   count   = try(local.workspace.create_iam_role_alerter, true) ? 1 : 0
 
   role_name             = "iam-role-cloudwatch-slack-alerts"
@@ -15,7 +15,7 @@ module "iam_role_alerter_lambda" {
 
 module "iam_policy_alerter_lambda" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
-  version = "5.34.0"
+  version = "5.47.1"
   count   = try(local.workspace.create_iam_role_alerter, true) ? 1 : 0
 
   name   = "iam-policy-cloudwatch-slack-alerts"

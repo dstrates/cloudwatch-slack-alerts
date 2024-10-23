@@ -38,7 +38,7 @@ jobs:
     name: Build
     needs: [ get-version ]
     runs-on: ubuntu-latest
-    container: golang:1.22.0-alpine
+    container: golang:1.23.2-alpine
     steps:
       - name: Build Scan Push
         uses: dstrates/github-actions/actions/ci-lambda-build@main
