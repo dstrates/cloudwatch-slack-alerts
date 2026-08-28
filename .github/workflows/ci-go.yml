@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: setup
         run: git config --global --add safe.directory $(pwd)
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: build
         run: make build
       - name: tidy
@@ -27,7 +27,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout Sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - id: set-matrix
         run: ./.github/scripts/resolve-modules.sh
   lint:
@@ -36,9 +36,9 @@ jobs:
     strategy:
       matrix: ${{ fromJson(needs.resolve-go-modules.outputs.matrix) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v4
+        uses: golangci/golangci-lint-action@v9
         with:
-          version: v1.52.2
+          version: v2.13.2
           working-directory: ${{ matrix.workdir }}

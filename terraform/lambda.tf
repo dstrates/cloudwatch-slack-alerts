@@ -1,6 +1,6 @@
 module "lambda_alerter" {
   source  = "terraform-aws-modules/lambda/aws"
-  version = "7.2.1"
+  version = "8.8.0"
 
   function_name                           = "cloudwatch-slack-alerts"
   description                             = "Sends alerts to Slack on CloudWatch error events"
