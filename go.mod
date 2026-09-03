@@ -1,6 +1,6 @@
 module github.com/dstrates/cloudwatch-slack-alerts
 
-go 1.20
+go 1.25
 
 require (
 	github.com/aws/aws-lambda-go v1.46.0
@@ -8,13 +8,13 @@ require (
 	github.com/aws/aws-sdk-go-v2/config v1.26.6
 	github.com/aws/aws-sdk-go-v2/service/ssm v1.45.0
 	github.com/nullify-platform/logger v1.5.6
-	github.com/slack-go/slack v0.12.3
-	github.com/stretchr/testify v1.8.4
+	github.com/slack-go/slack v0.23.1
+	github.com/stretchr/testify v1.11.1
 )
 
 require (
 	github.com/google/go-cmp v0.5.9 // indirect
-	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 )
 
