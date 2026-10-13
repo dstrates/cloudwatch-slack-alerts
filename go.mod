@@ -14,7 +14,7 @@ require (
 
 require (
 	github.com/google/go-cmp v0.5.9 // indirect
-	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 )
 
